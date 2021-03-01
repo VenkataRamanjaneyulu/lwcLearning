@@ -74,3 +74,54 @@ console.log(null == undefined); //true
 console.log(null === undefined);//false
 
 
+/**************Spread Operator******** */
+//1.Expanding String
+let names = 'Venkat';
+let nameArr = [...names];
+console.log(nameArr);
+
+//2.Combining an Array
+let arr1 = ["amazon","google"];
+let arr2= ["salesforce","apple"];
+let arr3 = [...arr1,...arr2];
+console.log(arr3);
+
+//3.Adding values to an array
+let a1= ['a','b','c'];
+let a2 =[...a1,"anil"];
+console.log(a2);
+
+
+//4.Combining an Objects
+let o1 = {name:"s",age:'24',doB:'1/01/1995'};
+let o2= {name:"k",age:'26',place:'india'};
+let o3={...o1,...o2};
+console.log(o3);
+
+
+//5.Creating shallow copy
+let arrN1= ['x','y','z'];
+let arrN2 = [...arrN1];
+arrN1.push('a');
+console.log(arrN1);
+console.log(arrN2);
+
+//6.Nested Copy
+let obja= [
+    {name:"super",age:20},
+    {name:"zero",age:10},
+];
+
+let objb = {...obja};
+console.log(objb);
+objb[0].name='Venky';
+console.log(objb);
+console.log(obja);
+
+
+//hack
+let objc= JSON.parse(JSON.stringify(obja));
+objc[0].name='Kumar';
+console.log(obja);
+console.log(objb);
+console.log(objc);
