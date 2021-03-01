@@ -66,5 +66,11 @@ console.log('Data type of obj is ----->',typeof obj); //object
 let sym= Symbol('sym');
 console.log('Data type of sym is ----->',typeof sym); //symbol
 
+let arr =[];
+console.log('Data type of arr is ----->',typeof arr); //object
+
+
+console.log(null == undefined); //true
+console.log(null === undefined);//false
 
 
