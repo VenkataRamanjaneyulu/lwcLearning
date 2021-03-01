@@ -1,15 +1,18 @@
-div {
-  color: blue;
-  background-color: aquamarine;
+body {
+  width: 50%;
 }
-
-#userId {
-  color: brown;
-  background-color: burlywood;
-}
-
 .head {
   color: blue;
   border-left: 5px solid blue;
-  background-color: rgb(218, 250, 211);
+  border-right: 5px solid blue;
+  background-color: ghostwhite !important;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.para {
+  text-align: center;
+  margin: 20px;
 }
