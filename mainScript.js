@@ -200,3 +200,83 @@ console.log(JSON.stringify(objn));
 var newObjs= JSON.parse(JSON.stringify(objn));
 console.log(newObjs);
 
+
+/*
+*
+*Array Methods : map(),every(),some(),sort(),filter(),reduce(),forEach()
+*
+*/
+
+var arrm= [2,3,5,6,7,8,9,2,3,20];
+
+/*syntax:
+arr.methodName(function(currentItemOfArray,IndexOfCurrentItem,ActualArray){
+    logic here............
+})*/
+
+//i)map() , map always returns an array
+//double the each element of an array and return new array
+var newarrm = arrm.map(function(currentItem,index,actualArray){
+console.log(`at index ${index} , the current item is ${currentItem} inside an array ${actualArray}`);
+return currentItem*2;
+});
+console.log(arrm);
+console.log(newarrm);
+
+//ii) filter()
+var newfilter = arrm.filter(function(item,index,array){
+  if(item>5){
+    return item;
+  }
+});
+console.log(newfilter);
+
+//iii) every()
+var ages = [17,20,26,85,47,15,35];
+var isAllAdults = ages.every(function(item){
+    return item>18;
+})
+console.log(isAllAdults);
+
+//iv) some()
+var someMinors = ages.some(function(item){
+    return item<18;
+});
+console.log(someMinors);
+
+//v)  sort() of string
+var namesto=['Venkat','Beny','Karuna','Satyavati','Michael'];
+console.log(namesto.sort());
+
+//sort() for numbers
+var points =[5,50,15,87,26,97];
+var sortedPoints = points.sort(function(a,b){
+  return a-b; //b-a retruns in descending order
+});
+console.log(sortedPoints);
+
+//reduce()
+/*syntax:
+reduce(function(totalVal,item,index,array){
+
+},initialvalue); */
+
+var numbs= [2,4,6,8,10];
+var totalVal = numbs.reduce(function(total,item){
+return total+=item;
+},0);
+console.log(totalVal);
+
+//forEach()  return is optional
+var testnums = [2,4,6];
+testnums.forEach(item => {
+    console.log(item);
+});
+
+
+
+
+
+
+
+
