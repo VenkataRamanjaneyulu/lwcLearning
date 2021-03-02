@@ -125,3 +125,62 @@ objc[0].name='Kumar';
 console.log(obja);
 console.log(objb);
 console.log(objc);
+
+/***************Destructuring**********************/
+
+//1.Array Destructuring
+let arrna= ["salesforce","paypal"];
+//let comp1= arrna[0];
+//let comp2= arrna[1];
+let [comp1,comp2]=arrna; 
+console.log('comp1===>',comp1);
+
+//2.Object Destructuring
+let options = {
+    name:"ap",
+    age:1
+}
+//let title=options.title;
+let {name, age} = options;
+console.log('name from object destrucing', name);
+
+/**************String Interpolation/Template literal*************/
+var a= 10;
+var b= 20;
+console.log(`The sum of ${a} and ${b} is ${a+b}`);
+
+
+var searchString ='Hello world by Venkat conatins the search string , i think it is good and Venkat is good';
+
+//includes() specifies whether specified string is there or not
+console.log('hello status in ===>',searchString.includes("hello"));
+console.log('Hello status in ===>',searchString.includes("Hello"));
+
+//indexOf() returns the first instance of specified string
+console.log('index of good in search string is ====>'+searchString.indexOf('good'));//65
+console.log('index of good in search string is ====>'+searchString.indexOf('goodest'));// -1
+
+//startsWith() returns true if specified string is at starting
+console.log('start of search string is Hello====>'+searchString.startsWith('Hello'));//true
+console.log('start of search string is hello====>'+searchString.startsWith('hello'));//false
+
+//slice() extracts the part of string and returns new string
+console.log('extracted part of search string is==>',searchString.slice(0,5));//Hello , includes end position
+
+//toLowerCase() converts the specified string to lower case letters
+console.log('lower the search string ===>',searchString.toLowerCase());
+
+//toUpperCase converts the specified string to upper case
+console.log('lower the search string ===>',searchString.toUpperCase());
+
+//trim removes the whitespaces before and after the string
+var srSt = '     Hello     ';
+console.log(srSt);
+console.log(srSt.length);
+var trimmedVar = srSt.trim();
+console.log(trimmedVar);
+console.log(trimmedVar.length);
+
+
+
+
