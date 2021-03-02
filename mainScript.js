@@ -183,4 +183,20 @@ console.log(trimmedVar.length);
 
 
 
+/*
+ * 
+ * Object and JSON operations
+ * 
+ */
+var objn = {
+    name:"Anil",
+    lastName:"K",
+    age:27,
+    company:"salesforce"
+}
+console.log(Object.keys(objn));
+console.log(Object.values(objn));
+console.log(JSON.stringify(objn));
+var newObjs= JSON.parse(JSON.stringify(objn));
+console.log(newObjs);
 
