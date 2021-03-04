@@ -274,6 +274,51 @@ testnums.forEach(item => {
 });
 
 
+/*
+*
+*Promise
+*
+*/
+
+function checkPromise(data){
+    return new Promise(function(resolve,reject){
+      if(data ===  ''){
+          return reject('No data found');
+      }else{
+          return  resolve('Successfully found data');
+      }
+    });
+}
+
+checkPromise('')
+.then(function(result){
+  console.log(result);
+})
+.catch(function(error){
+    console.log(error);
+})
+
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => {
+      console.log(response);
+      return response.json();
+  })
+  .then(res => console.log(res))
+
+
+import * as util  from './utils.js';
+console.log(util.pi2);
+
+
+import {pi2} from './utils.js';
+console.log(`pi value from util is ${pi2}`);
+
+import users from './utils.js';
+users();
+
+import {pifromutil} from './utils.js';
+console.log(`pifromutil is ${pifromutil}`);
 
 
 
