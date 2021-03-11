@@ -1,0 +1,21 @@
+<template>
+    <div>
+        <lightning-card title="Template Looping" icon-name="standard:opportunity">
+            <template for:each={cars} for:item="car">
+                <div key={car} class="slds-card slds-card_boundary colorbody">
+                   <lightning-card title={car} icon-name="standard:opportunity">
+                       <div class="slds-m-around_small">
+                           {car} <br/><br/>
+                       </div>    
+                       <div slot="footer">
+                           Cars Footer.
+                       </div>           
+                  </lightning-card>
+                </div> 
+            </template>
+            <div slot="footer">
+                Parent Footer.
+            </div>  
+        </lightning-card>   
+    </div> 
+</template>    
