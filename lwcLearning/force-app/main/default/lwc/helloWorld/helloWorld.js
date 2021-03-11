@@ -1,10 +1,20 @@
-import { LightningElement } from 'lwc';
+import { LightningElement ,track} from 'lwc';
 
 export default class HelloWorld extends LightningElement {
-    fullName= 'Zero to Hero';
-    title ='Aura';
+   
+
+    @track address ={
+        pincode: 500059,
+        city: "Hyderabad",
+        country: "India",
+    }
 
     changeHandler(event){
-        this.title= event.target.value;
+        this.address.city= event.target.value;
     }
+
+    /*
+    changeHandlerWithOutTrack(event){
+        this.address = {...this.address, "city":event.target.value};
+    } */
 }

@@ -1,16 +1,17 @@
-<template>
-    
+<template>   
     <div>
-        <lightning-card title="Two way Binding!" >
+        <lightning-card title="Track Decorator!" >
             <div class="slds-m-around_small"> 
-                <lightning-input type="text" 
-                    label="Value to Bind" onkeyup={changeHandler} placeholder="Enter Value to Bind">
+                <lightning-input 
+                    type="text" 
+                    label="Value to Update City in Object" 
+                    onkeyup={changeHandler} 
+                    placeholder="Enter Value to Bind to City">
                 </lightning-input>
             </div>
             <div class="slds-m-around_small">
-                {fullName} is the title of course {title}
+                {address.city} is my city.
             </div>
-        </lightning-card>
-        
+        </lightning-card>       
     </div>
 </template>
