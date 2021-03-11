@@ -1,17 +1,43 @@
 <template>   
-    <div>
+    <div class="slds-m-around_small">
+        <lightning-card title="Two way Binding" >
+            <div class="slds-m-around_small"> 
+                <lightning-input 
+                    type="text" 
+                    label="Enter your name" 
+                    onkeyup={twoWayBindHandler} 
+                    placeholder="Type Your Name here......">
+                </lightning-input>
+            </div>
+            <div class="slds-m-around_small">
+                My name is {name}.
+            </div>
+        </lightning-card>       
+    </div>
+    <div class="slds-m-around_small">
         <lightning-card title="Track Decorator!" >
             <div class="slds-m-around_small"> 
                 <lightning-input 
                     type="text" 
-                    label="Value to Update City in Object" 
-                    onkeyup={changeHandler} 
-                    placeholder="Enter Value to Bind to City">
+                    label="Enter city name" 
+                    onkeyup={trackHandler} 
+                    placeholder="Enter City here......">
                 </lightning-input>
             </div>
             <div class="slds-m-around_small">
                 {address.city} is my city.
             </div>
-        </lightning-card>       
+        </lightning-card> 
+    </div>
+    <div class="slds-m-around_small">
+        <lightning-card title="Getter Demo" >
+            
+            <div class="slds-m-around_small">
+               Sum of {num1} and {num2} is {sumOfNumbers}.
+            </div>
+            <div class="slds-m-around_small">
+                First User from {users} is {firstUser}.
+             </div>
+        </lightning-card> 
     </div>
 </template>
