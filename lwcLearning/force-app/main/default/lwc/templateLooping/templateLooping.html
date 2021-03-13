@@ -1,21 +1,71 @@
 <template>
-    <div>
-        <lightning-card title="Template Looping" icon-name="standard:opportunity">
-            <template for:each={cars} for:item="car">
-                <div key={car} class="slds-card slds-card_boundary colorbody">
-                   <lightning-card title={car} icon-name="standard:opportunity">
-                       <div class="slds-m-around_small">
-                           {car} <br/><br/>
-                       </div>    
-                       <div slot="footer">
-                           Cars Footer.
-                       </div>           
-                  </lightning-card>
-                </div> 
-            </template>
+   
+        <lightning-card 
+            title="Template Looping using for:each" icon-name="standard:opportunity">
+            <div class="slds-m-around_small">
+                <template for:each={cars} for:item="car">
+                    <div key={car} class="slds-card slds-card_boundary colorbody">
+                    <lightning-card title={car} icon-name="standard:opportunity">
+                        <div class="slds-m-around_small">
+                            {car} 
+                        </div>    
+                        <div slot="footer">
+                            Cars Footer .
+                        </div>           
+                    </lightning-card>
+                    </div> 
+                </template>
+            </div>
             <div slot="footer">
                 Parent Footer.
             </div>  
         </lightning-card>   
-    </div> 
+
+        <lightning-card 
+            title="Template looping using iterator" 
+            icon-name="standard:avatar">
+            <div class="slds-m-around_small">
+               <template iterator:ceo={ceoList}>
+                   <div key={ceo.value.id} 
+                        >
+                        <ul class="slds-has-dividers_around-space">
+                            <template if:true={ceo.first}>
+                                <div 
+                                    class= "slds-box 
+                                            slds-theme_shade">
+                                    List of Top Companies CEO's..
+                                </div>
+                            </template>
+                            <li class="slds-item">
+                                <strong>{ceo.value.name}</strong> is the CEO of {ceo.value.company}.
+                            </li>
+                            <template if:true={ceo.last}>
+                                <div  class= "slds-box slds-theme_shade">       
+                                    Thank you so much!
+                                </div>
+                            </template> 
+                        </ul>
+                   </div>
+               </template>
+            </div>
+        </lightning-card>
+    
+
+    
+        <lightning-card 
+            title="Template looping using for Each directive" 
+            icon-name="standard:avatar">
+            <div class="slds-m-around_small">
+            <template   for:each={ceoList} for:item="ceo">
+                        <div key={ceo.id}>
+                            <ul class="slds-has-dividers_around-space">
+                                <li class="slds-item">
+                                    <strong>{ceo.name}</strong> is the CEO of {ceo.company}.
+                                </li>
+                            </ul>
+                        </div>
+            </template>
+            </div>
+        </lightning-card>
+    
 </template>    

@@ -1,21 +1,21 @@
-<template>
-    <div class="slds-m-around_small">
+<template> 
         <lightning-card title="Conditional Rendering">
             <div class="slds-m-around_small">
-                <lightning-input type="toggle" label="View Data" onchange={changeHandler}></lightning-input>
-            </div>
-            <div class="slds-m-around_small">
-                <template if:true={isVisible}>
-                    <div class="slds-m-around_small">
-                        Zero to Hero in LWC series.
-                    </div>
-                </template>
-                <template if:false={isVisible}>
-                    <div class="slds-m-around_small">
-                        Nothing to show.
-                    </div>
-                </template>
+                <div class="slds-m-around_small">
+                    <lightning-input type="toggle" label="View Data" onchange={changeHandler}></lightning-input>
+                </div>
+                <div class="slds-m-around_small">
+                    <template if:true={isVisible}>
+                        <div class="slds-m-around_small">
+                            Zero to Hero in LWC series.
+                        </div>
+                    </template>
+                    <template if:false={isVisible}>
+                        <div class="slds-m-around_small">
+                            Nothing to show.
+                        </div>
+                    </template>
+                </div>
             </div>
         </lightning-card>
-    </div>
 </template>
