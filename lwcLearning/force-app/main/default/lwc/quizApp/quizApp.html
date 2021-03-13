@@ -1,5 +1,61 @@
 <template>
-    <lightning-card title="Quiz App">
-        Hello!
+    <lightning-card title="Quiz App in LWC">
+        <div class="slds-m-around_medium">
+            <template if:true={isSubmitted}>
+                <div class={scoresStyle}>
+                    You have scored {correctAnswers} out of {myQuestions.length}
+                </div>
+            </template>
+        </div>
+        <div class="slds-m-around_medium">
+            <form>
+                <template for:each={myQuestions} for:item="quest">
+                    <div key={quest.id} class="sls-m-around_medium">
+                        <div class="slds-m-around_medium">
+                            <strong>Question {quest.id} : {quest.question}</strong>
+                            <div class="slds-grid slds-gutters slds-p-around_medium">
+                                <div class="slds-col">
+                                    <input type="radio" name={quest.id} value="a" onchange={onchangeHandler}/>
+                                    {quest.options.a}
+                                </div>
+                                <div class="slds-col">
+                                    <input type="radio" name={quest.id} value="b" onchange={onchangeHandler}/>
+                                    {quest.options.b}
+                                </div>   
+                                
+                                <div class="slds-col">
+                                    <template if:true={quest.options.c}>
+                                        <input type="radio" name={quest.id} value="c" onchange={onchangeHandler}/>        
+                                    </template>
+                                    {quest.options.c}  
+                                </div> 
+                                
+                                <div class="slds-col">
+                                    <template if:true={quest.options.d}>
+                                        <input type="radio" name={quest.id} value="d" onchange={onchangeHandler}/>        
+                                    </template>
+                                    {quest.options.d}  
+                                </div> 
+                            </div>
+                        </div>         
+                    </div>
+                </template>
+                <lightning-button   type="submit" 
+                                    variant="brand" 
+                                    label="Submit" 
+                                    title="Submit Quiz"
+                                    class="slds-m-around_medium"
+                                    disabled={allNotSelected}
+                                    onclick={submitHandler}>
+                </lightning-button>
+                <lightning-button   type="reset" 
+                                    variant="brand" 
+                                    label="Reset" 
+                                    title="Reset Quiz"
+                                    class="slds-m-around_medium"
+                                    onclick={resetHandler}>
+                </lightning-button>
+            </form>
+        </div>
     </lightning-card>
 </template>
